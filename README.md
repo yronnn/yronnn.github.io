@@ -1,10 +1,14 @@
-[survey_analysis_dashboard.html](https://github.com/user-attachments/files/29404456/survey_analysis_dashboard.html)
+
+
+
+
+[survey_analysis_dashboard (2).html](https://github.com/user-attachments/files/29404695/survey_analysis_dashboard.2.html)
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaborEscolar - Survey Insights & Analytics</title>
+    <title>John Pork Tacos - Survey Insights & Analytics</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,7 +41,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS for Scrollbars & Animations -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
@@ -89,10 +93,10 @@
             <div class="h-16 flex items-center justify-between px-6 border-b border-slate-100 dark:border-slate-900">
                 <div class="flex items-center gap-3">
                     <div class="p-2 bg-primary-600 text-white rounded-lg shadow-md shadow-primary-500/20">
-                        <i class="fa-solid fa-pepper-hot text-lg"></i>
+                        <i class="fa-solid fa-piggy-bank text-lg"></i>
                     </div>
                     <div>
-                        <h1 class="font-bold text-lg leading-none text-primary-600 dark:text-primary-400">SaborEscolar</h1>
+                        <h1 class="font-bold text-lg leading-none text-primary-600 dark:text-primary-400">John Pork Tacos</h1>
                         <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">Business Project</span>
                     </div>
                 </div>
@@ -189,7 +193,7 @@
                             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                             Interactive Decision Matrix Active
                         </div>
-                        <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">SaborEscolar: Food Preferences Dashboard</h2>
+                        <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">John Pork Tacos: Food Preferences Dashboard</h2>
                         <p class="mt-2 text-primary-100 text-sm md:text-base">
                             Empowering our school food stall project using real data. Filter the 55 responses, compare grade behaviors, click elements to drill down, and build the perfect menu strategy.
                         </p>
@@ -578,7 +582,7 @@
 
             <!-- FOOTER -->
             <footer class="no-print border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-6 text-center text-xs text-slate-400 transition-colors duration-300">
-                <p>© 2026 SaborEscolar School Project. Created for presentation pitch. Built with HTML5/Tailwind/Chart.js.</p>
+                <p>© 2026 John Pork Tacos School Project. Created for presentation pitch. Built with HTML5/Tailwind/Chart.js.</p>
             </footer>
         </main>
     </div>
@@ -712,11 +716,16 @@
         };
 
         window.onload = function() {
-            // Check & set visual theme
-            const isDark = localStorage.getItem('theme') === 'dark';
+            // Check & set visual theme (Set to Dark Mode by default)
+            const savedTheme = localStorage.getItem('theme');
+            const isDark = savedTheme !== 'light'; // default to true (dark) if not explicitly set to light
+            
             if (isDark) {
                 document.documentElement.classList.add('dark');
                 document.getElementById('theme-toggle-icon').className = "fa-solid fa-sun text-lg";
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.getElementById('theme-toggle-icon').className = "fa-solid fa-moon text-lg";
             }
 
             // Init core functions
